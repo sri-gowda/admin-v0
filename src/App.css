@@ -36,3 +36,69 @@
     transform: rotate(360deg);
   }
 }
+
+.card{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding: 30px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+label{
+  text-align: left;
+}
+
+input{
+  display: block;
+}
+
+.form-field{
+  text-align: left;
+  margin:auto;
+  width:100%;
+  margin-bottom: 20px;
+}
+
+.center{
+  /* display: flex;
+  justify-content: center;
+  height:100vh;
+  align-items: center; */
+  position: absolute;
+  top:40%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:100%;
+}
+
+.form-container{
+  max-width: 300px;
+  margin: auto;
+}
+
+.input-element{
+  border: 2px solid green;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top:5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.primary-btn{
+  background: green;
+  color: #fff;
+  padding: 5px 10px;
+  border: 2px solid green;
+  outline: none;
+  border-radius: 5px;
+}
+
+.secondary-btn{
+  background: #fff;
+  color: #282c34;
+  padding: 5px 10px;
+  border: 2px solid green;
+  outline: none;
+  border-radius: 5px;
+}
