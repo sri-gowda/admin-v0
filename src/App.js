@@ -19,11 +19,11 @@ function App() {
       <BrowserRouter>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route path="/" element={<AuthLayout />}>
-              <Route path="/signup" element={<SignUpPage />} />
-              <Route path="/login" element={<LoginPage />} />
+            <Route path="/auth" element={<AuthLayout />}>
+              <Route path="/auth/signup" element={<SignUpPage />} />
+              <Route path="/auth/login" element={<LoginPage />} />
             </Route>
-            <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route path="/" element={<DashboardLayout />}>
               <Route path="home" element={<HomePage />} />
               <Route path="products" element={<ProductsPage />} />
             </Route>

@@ -35,7 +35,7 @@ const LogIn = ({ submit }) => {
             {/* <button className='primary-btn'>Submit</button> */}
             <Button text="Sign Up" type="PRIMARY">Log In</Button>
             <br />
-            <Link to="/signup">
+            <Link to="/auth/signup">
                 No Account ? Signup
             </Link>
         </form>
