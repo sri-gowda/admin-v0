@@ -12,7 +12,6 @@ const SignUpPage = () => {
     return (
         <div className='center'>
             <SignUp submit={submit} />
-
         </div>
     );
 }

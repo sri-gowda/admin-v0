@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Button = ({ type, children }) => {
+const Button = ({ type, varient, children, onClick }) => {
 
     return (
-        <button className={`${type === 'PRIMARY' ? 'primary-btn' : 'secondary-btn'}`}>{children}</button>
+        <button type={type} className={`${varient === 'PRIMARY' ? 'primary-btn' : 'secondary-btn'}`} onClick={onClick}>{children}</button>
     );
 }
 

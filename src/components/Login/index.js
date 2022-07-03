@@ -33,12 +33,12 @@ const LogIn = ({ submit }) => {
                 <input type="password" className='input-element' value={password} onChange={onChangePassword} />
             </div>
             {/* <button className='primary-btn'>Submit</button> */}
-            <Button text="Sign Up" type="PRIMARY">Log In</Button>
+            <Button type="submit" varient="PRIMARY">Log In</Button>
             <br />
             <Link to="/auth/signup">
                 No Account ? Signup
             </Link>
-        </form>
+        </form >
     );
 }
 

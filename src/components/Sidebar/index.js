@@ -1,41 +1,41 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import logo from '../../assets/images/logo.png';
 
 const sidebarItems = [
     {
         name: 'Home',
         id: '1',
-        isSelected: true,
-        path: "/home"
+        path: "/",
+        // icon: 'fa fa-home'
+        icon: logo
     },
     {
         name: "Products",
         id: '2',
-        isSelected: false,
-        path: '/products'
-    },
-    {
-        name: "Accounst",
-        id: "3",
-        isSelected: false,
-        path: '/accounts'
+        path: '/products',
+        // icon: 'fa fa-car'
+        icon: logo
     }
 ]
 
-const Sidebar = () => {
+const Sidebar = ({ sidebarRef, isOpen }) => {
 
-    const [selected, setSeletecd] = useState(sidebarItems[0]);
-
+    const { pathname } = useLocation();
 
     return (
 
-        <div class="sidebar">
-            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/business-logo-design-template-78655edda18bc1196ab28760f1535baa_screen.jpg?ts=1617645324" height="100px" />
+        <div className="sidebar" id="sidebar" ref={sidebarRef}>
+            <img src={logo} height="50px" />
             <ul className='list'>
                 {sidebarItems.map((itm, index) => {
-                    return <li onClick={() => setSeletecd(itm)} className='list-item' style={{ background: selected.name === itm.name ? 'darkblue' : '', cursor: 'pointer' }}>
-                        <Link to={itm.path} style={{ color: selected.name === itm.name ? '#fff' : '#000' }}>
-                            {itm.name}
+                    let selected = pathname === itm.path;
+                    console.log("kk", pathname, itm.name, pathname.includes(itm.name));
+                    return <li key={index} className='list-item' style={{ background: selected ? 'darkblue' : '', cursor: 'pointer', textAlign: !isOpen ? 'center' : 'left' }}>
+                        <Link to={itm.path} style={{ color: selected ? '#fff' : '#000', display: 'block' }}>
+                            {/* <i className={itm.icon} style={{ color: '#fff' }}></i> */}
+                            <img src={itm.icon} height="20px" />
+                            {isOpen && <span style={{ marginLeft: '10px' }}>{itm.name}</span>}
                         </Link>
                     </li>
                 })}
